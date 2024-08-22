@@ -1,0 +1,49 @@
+{
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "api",
+      "web"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.9",
+    "@redwoodjs/auth-dbauth-setup": "6.6.4",
+    "@redwoodjs/core": "6.6.4"
+  },
+  "eslintConfig": {
+    "extends": "@redwoodjs/eslint-config",
+    "root": true
+  },
+  "engines": {
+    "node": "=18.x",
+    "yarn": ">=1.15"
+  },
+  "prisma": {
+    "seed": "yarn rw exec seed"
+  },
+  "packageManager": "yarn@3.7.0",
+  "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@graphql-tools/code-file-loader": "^8.1.0",
+    "@graphql-tools/utils": "^10.0.13",
+    "@mui/icons-material": "^5.15.5",
+    "@mui/material": "^5.15.7",
+    "@mui/x-charts": "^6.19.4",
+    "@untitled-ui/icons-react": "^0.1.2",
+    "apexcharts": "^3.45.2",
+    "crypto": "^1.0.1",
+    "file-saver": "^2.0.5",
+    "lodash.isequal": "^4.5.0",
+    "numeral": "^2.0.6",
+    "pdf-lib": "^1.17.1",
+    "react-apexcharts": "^1.4.1",
+    "react-i18next": "^14.0.0",
+    "react-map-gl": "^7.1.7",
+    "react-markdown": "^9.0.1",
+    "react-responsive-carousel": "^3.2.23",
+    "react-router-dom": "^6.21.1",
+    "simplebar-react": "^3.2.4"
+  }
+}

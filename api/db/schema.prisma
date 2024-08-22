@@ -1,0 +1,137 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = "native"
+}
+
+// Define your own datamodels here and run `yarn redwood prisma migrate dev`
+// to create migrations for them and apply to your dev DB.
+// TODO: Please remove the following example:
+model User {
+  id                  Int            @id @default(autoincrement())
+  email               String         @unique
+  firstName           String
+  lastName            String
+  rank                String
+  shop                Shop           @relation(fields: [shopID], references: [shopCode])
+  shopID              Int
+  Orders              Order[]
+  Notification        Notification[]
+  hashedPassword      String         @default("")
+  salt                String         @default("")
+  resetToken          String?
+  roles               String?
+  resetTokenExpiresAt DateTime?
+  status              String         @default("users")
+  created             DateTime       @default(now())
+}
+
+model Shop {
+  id            Int             @id @default(autoincrement())
+  name          String
+  phone         String
+  dodaac        String          @default("FB4661")
+  address       String
+  city          String
+  state         String
+  zip           Int
+  orgCode       String
+  shopCode      Int             @unique
+  owner         String
+  users         User[]
+  // userRole      String
+  orders        Order[]
+  Shopinventory Shopinventory[]
+}
+
+model Order {
+  id               Int            @id @default(autoincrement())
+  orderNumber      Int            @default(autoincrement())
+  orderDate        DateTime       @default(now())
+  orderStatus      String?        @default("draft")
+  shop             Shop?          @relation(fields: [shopID], references: [shopCode])
+  shopID           Int?
+  user             User?          @relation(fields: [userID], references: [id], onDelete: Cascade)
+  userID           Int?
+  part             Part?          @relation(fields: [partId], references: [id])
+  partId           Int?
+  orderQuantity    Int
+  dueInDoc         String?
+  dueOutDoc        String?
+  rdd              String?
+  ujc              String?
+  dodaac           String?
+  texCode          String?
+  jcn              String?
+  shipTo           String?
+  sd               String?
+  projectCode      String?
+  demandCode       String?
+  wuc              String?
+  toRef            String?
+  markFor          String?
+  priority         Int?
+  conFad           String?
+  message          String?
+  addedToInventory Boolean?       @default(false)
+  notification     Notification[]
+}
+
+model Part {
+  id                    Int             @id @default(autoincrement())
+  nomenclature          String
+  nsn                   String          @unique
+  partNumber            String?
+  cageCode              String?
+  unitOfIssue           String?
+  unitPrice             String?
+  isg                   String?
+  commodityCode         String?
+  shelfLifeCode         String?
+  typeCargoCode         String?
+  hazardousMaterialCode String?
+  rid                   String?
+  location              String?
+  nmfc                  String?
+  description           String?
+  manufacturer          String?
+  status                String?         @default("parts")
+  submittingShop        Int?
+  orders                Order[]
+  Shopinventory         Shopinventory[]
+}
+
+model Notification {
+  id      Int      @id @default(autoincrement())
+  user    User?    @relation(fields: [userID], references: [id], onDelete: Cascade)
+  userID  Int
+  order   Order?   @relation(fields: [orderID], references: [id], onDelete: Cascade)
+  orderID Int
+  created DateTime @default(now())
+  message String
+  read    Boolean  @default(false)
+}
+
+model UserRequest {
+  id             Int    @id @default(autoincrement())
+  email          String
+  firstName      String
+  lastName       String
+  rank           String
+  hashedPassword String
+  shopID         Int
+}
+
+model Shopinventory {
+  id          Int   @id @default(autoincrement())
+  part        Part  @relation(fields: [partId], references: [id])
+  partId      Int
+  quantity    Int
+  maxQuantity Int   @default(100)
+  shop        Shop? @relation(fields: [shopID], references: [shopCode])
+  shopID      Int?
+}

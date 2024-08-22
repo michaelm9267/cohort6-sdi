@@ -1,0 +1,341 @@
+
+.header {
+    display: grid;
+    grid-template-columns: repeat(3, 33.3%);
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    min-width: 1750px;
+    margin: 0 20px;
+}
+
+.coverPage {
+  min-height: 500px;
+  min-width: 1400px;
+  margin-top: 12%;
+  
+}
+
+
+.fullscreenButton {
+  width: 200px;
+  margin-left: auto;
+  height: 30px;
+}
+
+.arrowIcon {
+    font-size: 70px;
+    color: black;
+    padding: 5px;
+    border-radius: 50%;
+    color: rgb(41, 91, 167);
+}
+
+.arrowIcon:hover {
+  background-color: rgb(41, 91, 167) ;
+    color: white;
+    transition: 0.4s ease-in-out;
+}
+
+.listContainer {
+    background-color: rgba(221, 220, 220, 0.292);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 700px;
+}
+
+.listContainer li {
+ padding: 4px 0
+}
+
+.ClosingContentCnt {
+    margin-top: 1%;
+}
+
+.divider {
+    border: 2px solid rgb(41, 91, 167);
+    font-size: 30px;
+    margin: 30px;
+}
+
+
+.button {
+    border-radius: 50px;
+    background-color: transparent;
+    margin: 0 20px
+}
+
+.prevButton {
+transform: rotate(90deg);
+}
+
+.nextButton {
+transform: rotate(-90deg);
+}
+
+.buttonContainer {
+width: auto;
+    
+}
+
+.sldeInfomationCnt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 605px;
+}
+
+
+.headshot {
+    width: 165px;
+    height: 250px;
+}
+
+.profileCnt {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(2, 50%);
+    align-items: center;
+    transition: width 300ms ease-in-out;
+    min-height: 400px;
+
+}
+
+.presentationContainer {
+   padding : 30px;
+   margin: 6px 0;
+   min-width: 1800px;
+   min-height: 800px;
+   border: 5px solid rgba(128, 128, 128, 0.292);
+   box-shadow: 0px 7px 25px 7px rgba(128, 128, 128, 0.292);
+}
+
+.tableOfContent {
+    min-width: 1500px;
+    min-height: 600px;
+    padding: 30px 0 60px 70px;
+}
+
+.tableOfContent li{
+ font-size: 3em;
+ font-family: Arial, sans-serif;
+}
+.galvanize {
+    min-width: 1500px;
+    min-height: 620px;
+    padding: 5px 0 0 70px;
+    margin-top: 30px;
+}
+
+.galvanizeContainer{
+    margin-top: 50px;
+    
+}
+
+.galvanize li{
+    font-size: 2em;
+    font-family: Arial, sans-serif;
+    margin: 30px 0;
+    
+}
+
+.rubyShore {
+    min-width: 1500px;
+    min-height: 610px;
+    padding-left: 70px;
+}
+
+
+
+.rubyShore li{
+  font-size: 2em;
+  font-family: Arial, sans-serif;
+  margin: 20px 0;
+  
+}
+
+
+.rubyShoreTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.rubyShoreTitle img {
+  width: 150px
+}
+
+.DD {
+  min-width: 1500px;
+  min-height: 610px;
+  padding-left: 70px;
+}
+
+.DD li{
+  font-size: 1.75em;
+  font-family: Arial, sans-serif;
+  margin: 15px 0;
+  
+}
+
+.DDbreakdown {
+  display: flex;
+  gap: 40px;
+  min-width: 100% ;
+  margin-left: -50px;
+} 
+
+.ddimportant {
+  font-weight: bolder;
+  text-decoration: underline;
+  font-style: italic;
+  
+}
+
+.design, .discovery {
+  background-color: rgba(221, 220, 220, 0.292);
+  border-radius: 5px;
+  padding: 10px 35px;
+  max-width: 40%;
+  min-width: 40%;
+}
+
+.discovery {
+  margin-right: 40px ;
+}
+
+.AppConcept {
+  min-width: 1500px;
+  min-height: 610px;
+  padding-left: 70px;
+}
+
+.keyword {
+  color: black;
+}
+
+.AppConceptList > li:first-child {
+ font-style: italic;
+ width: fit-content;
+}
+
+.problemStatement {
+  color: rgb(255, 85, 0);
+}
+
+.AppConceptList li{
+  font-size: 1.75em;
+  font-family: Arial, sans-serif;
+  margin: 15px 0;
+}
+
+.webUsers {
+  min-width: 1500px;
+  min-height: 610px;
+  padding-left: 30px;
+  padding-top: 40px;
+}
+
+.webUsers li {
+ font-size: 1.75em;
+ font-family: Arial, sans-serif;
+ margin: 15px 0;
+}
+
+.imageGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: repeat(2, 50%);
+  align-items: center;
+  justify-self: center;
+  gap: 5px;
+    min-width: 1550px;
+    min-height: 550px;
+    background-color: rgba(221, 220, 220, 0.292);
+    padding: 25px;
+    border-radius: 5px;
+}
+.imageGrid img {
+    width: 50%;
+   justify-self: center;
+}
+
+.register {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.listOfUnits {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.inventory {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+.orderDetails {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+.title {
+    text-align: center;
+    font-size: 70px;
+    
+}
+
+.Logo {
+   grid-column: 1 / 2;
+    width: 150px;
+    justify-self: start;
+}
+
+.dark-li {
+  color: white;
+}
+
+.light-li {
+  color: black;
+}
+
+.Logo:nth-of-type(2) {
+  grid-column: 3 / 4;
+    width: 175px;
+    justify-self: end;
+}
+
+.individualProfile {
+    justify-self: start;
+    display: flex;
+    gap: 20px;
+    margin: 10px;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: rgba(221, 220, 220, 0.292);
+    min-width: 700px;
+    min-height: 270px;
+    
+}
+
+.strkWerxLogo {
+    width: 300px;
+    bottom: -50px;
+}
+
+.strkWerxLogoContainer {
+    text-align: end;
+    margin-bottom: 50px;
+    position: absolute;
+    bottom: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+ 
+}
+
+
+.mainBody {
+    min-height: 775px;
+    position: relative;
+
+}
